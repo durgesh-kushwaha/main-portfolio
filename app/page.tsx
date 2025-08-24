@@ -10,11 +10,11 @@ import { SiLeetcode } from "react-icons/si";
 import { format } from 'date-fns';
 
 const formatDate = (dateString: string) => {
-  try {
-    return format(new Date(dateString), 'dd-MM-yyyy');
-  } catch (error) {
-    return dateString;
-  }
+    try {
+        return format(new Date(dateString), 'dd-MM-yyyy');
+    } catch {
+        return dateString;
+    }
 }
 
 export default function Home() {
@@ -25,17 +25,17 @@ export default function Home() {
     <div className="container">
       <section id="home" className="hero-section">
         <div className="hero-background"></div>
-        <h1 className="hero-title">Hi, I'm Durgesh Kushwaha</h1>
+        <h1 className="hero-title">Hi, I&apos;m Durgesh Kushwaha</h1>
         <p className="hero-subtitle">
-          I'm a <TypewriterEffect />
+          I&apos;m a <TypewriterEffect />
         </p>
       </section>
 
       <section id="about" className="section">
-        <div className="about-container">
+         <div className="about-container">
           <div className="about-image-container">
             <Image
-              src="/durgesh.webp"
+              src="/profile-picture.jpg"
               alt="Durgesh Kushwaha"
               width={350}
               height={350}
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="about-content">
             <h2>About Me</h2>
             <p>
-              I am a passionate Full Stack Developer with a keen interest in leveraging AI and Data Science to build innovative solutions. With a solid foundation in modern web technologies, I enjoy creating seamless, user-friendly applications that solve real-world problems. I'm a lifelong learner, always exploring new tools and frameworks to enhance my skill set.
+              I am a passionate Full Stack Developer with a keen interest in leveraging AI and Data Science to build innovative solutions. With a solid foundation in modern web technologies, I enjoy creating seamless, user-friendly applications that solve real-world problems. I&apos;m a lifelong learner, always exploring new tools and frameworks to enhance my skill set.
             </p>
             <a href="/Durgesh-Kushwaha-Resume.pdf" download className="resume-button">
               Download Resume
@@ -57,14 +57,14 @@ export default function Home() {
       <section id="skills" className="section">
         <h2 className="section-title">My Skills</h2>
         <div className="skills-container">
-          <div className="skill-badge">JavaScript</div>
-          <div className="skill-badge">TypeScript</div>
-          <div className="skill-badge">React</div>
-          <div className="skill-badge">Next.js</div>
-          <div className="skill-badge">Node.js</div>
-          <div className="skill-badge">Python</div>
-          <div className="skill-badge">SQL</div>
-          <div className="skill-badge">Docker</div>
+            <div className="skill-badge">JavaScript</div>
+            <div className="skill-badge">TypeScript</div>
+            <div className="skill-badge">React</div>
+            <div className="skill-badge">Next.js</div>
+            <div className="skill-badge">Node.js</div>
+            <div className="skill-badge">Python</div>
+            <div className="skill-badge">SQL</div>
+            <div className="skill-badge">Docker</div>
         </div>
       </section>
 
@@ -82,15 +82,14 @@ export default function Home() {
         <div className="cards-container">
           {certificates.map((certificate, index) => (
             <div key={index} className="card">
-
               {certificate.image && (
-                <Image
-                  src={certificate.image}
-                  alt={certificate.title}
-                  width={400}
-                  height={180}
-                  className="project-thumbnail"
-                />
+                  <Image
+                    src={certificate.image}
+                    alt={certificate.title}
+                    width={400}
+                    height={180}
+                    className="project-thumbnail"
+                  />
               )}
               <h3>{certificate.title}</h3>
               <div className="certificate-card-content">
@@ -130,7 +129,7 @@ export default function Home() {
                 <Image
                   src={featuredImage}
                   alt={title}
-                  width={250}
+                  width={150}
                   height={150}
                   className="blog-post-card-image"
                 />
@@ -139,66 +138,53 @@ export default function Home() {
           ))}
         </div>
         <div style={{ textAlign: 'center' }}>
-          <Link href="/blogs" className="view-all-btn">
-            View All Posts
-          </Link>
+            <Link href="/blogs" className="view-all-btn">
+                View All Posts
+            </Link>
         </div>
       </section>
 
       <section id="contact" className="section">
         <h2 className="section-title">Get In Touch</h2>
         <div className="contact-container">
-          <div className="social-links">
-            <h3>Let's Connect</h3>
-            <p>
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
-            </p>
-
-            <div className="social-icons-wrapper">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
-                <FaGithub />
-              </a>
-              <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LeetCode">
-                <SiLeetcode />
-              </a>
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X.com">
-                <FaTwitter />
-              </a>
-
-              <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
-                <FaWhatsapp />
-              </a>
+            <div className="social-links">
+                <h3>Let&apos;s Connect</h3>
+                <p>
+                    I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+                </p>
+                <div className="social-icons-wrapper">
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn"><FaLinkedin /></a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub"><FaGithub /></a>
+                    <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LeetCode"><SiLeetcode /></a>
+                    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X.com"><FaTwitter /></a>
+                    <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp"><FaWhatsapp /></a>
+                </div>
+                <div className="contact-details">
+                  <a href="mailto:durgeshcgc@gmail.com">durgeshcgc@gmail.com</a>
+                  <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer">WhatsApp: +91 7706820906</a>
+                </div>
             </div>
-
-            <div className="contact-details">
-              <a href="mailto:durgeshcgc@gmail.com">durgeshcgc@gmail.com</a>
-              <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer">WhatsApp: +91 7706820906</a>
-            </div>
-          </div>
-          <form action="https://formspree.io/f/xblarykl" method="POST" className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name">Your Name</label>
-              <input id="name" type="text" name="name" className="form-input" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Your Email</label>
-              <input id="email" type="email" name="email" className="form-input" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Mobile Number (Optional)</label>
-              <input id="phone" type="tel" name="phone" className="form-input" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Your Message</label>
-              <textarea id="message" name="message" className="form-textarea" required></textarea>
-            </div>
-            <button type="submit" className="form-submit-btn">Send Message</button>
-          </form>
+            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" className="contact-form">
+                <div className="form-group">
+                    <label htmlFor="name">Your Name</label>
+                    <input id="name" type="text" name="name" className="form-input" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Your Email</label>
+                    <input id="email" type="email" name="email" className="form-input" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="phone">Mobile Number (Optional)</label>
+                    <input id="phone" type="tel" name="phone" className="form-input" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="message">Your Message</label>
+                    <textarea id="message" name="message" className="form-textarea" required></textarea>
+                </div>
+                <button type="submit" className="form-submit-btn">Send Message</button>
+            </form>
         </div>
-      </section>
+    </section>
     </div>
   );
 }

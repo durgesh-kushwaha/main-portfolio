@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Fuse from "fuse.js";
@@ -17,11 +17,11 @@ export default function BlogSearch({ allPosts }: { allPosts: Post[] }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Post[]>(allPosts);
 
-  const fuse = new Fuse(allPosts, {
+  const fuse = useMemo(() => new Fuse(allPosts, {
     keys: ["title", "description"],
     includeScore: true,
     threshold: 0.4,
-  });
+  }), [allPosts]);
 
   useEffect(() => {
     if (query.trim() === "") {
@@ -30,7 +30,7 @@ export default function BlogSearch({ allPosts }: { allPosts: Post[] }) {
       const searchResults = fuse.search(query);
       setResults(searchResults.map(result => result.item));
     }
-  }, [query, allPosts]);
+  }, [query, allPosts, fuse]); 
 
   return (
     <>
@@ -43,11 +43,9 @@ export default function BlogSearch({ allPosts }: { allPosts: Post[] }) {
           className="search-input"
         />
       </div>
-      {/* Change the container to a simple div */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {results.length > 0 ? (
           results.map(({ id, title, date, featuredImage, description }) => (
-            // Use the new CSS class here
             <Link key={id} href={`/blogs/${id}`} className="blog-post-card">
               <div className="blog-post-card-content">
                 <h3>{title}</h3>

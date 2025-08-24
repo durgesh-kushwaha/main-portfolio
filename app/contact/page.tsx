@@ -58,7 +58,7 @@ export default function ContactPage() {
 
   return (
     <MainLayout>
-      {/* Hero Section */}
+    
       <section className="hero">
         <div className="hero-content">
           <h1>Get In Touch</h1>
@@ -69,7 +69,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Methods */}
       <section className="section">
         <div className="section-content">
           <div className="section-header">
@@ -107,7 +106,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Availability Status */}
       <section className="section section-alt">
         <div className="section-content">
           <div className="section-header">
@@ -145,7 +143,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Response Time */}
       <section className="section">
         <div className="section-content">
           <Card>
@@ -175,7 +172,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Let's Connect */}
       <section className="cta">
         <div className="cta-content">
           <h2>Ready to Start a Conversation?</h2>
