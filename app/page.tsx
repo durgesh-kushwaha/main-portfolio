@@ -1,103 +1,204 @@
+import Link from "next/link";
 import Image from "next/image";
+import ProjectCard from "../components/ui/ProjectCard";
+import TypewriterEffect from "../components/ui/TypewriterEffect";
+import projects from "../content/projects/projects.json";
+import certificates from "../content/certificates/certificates.json";
+import { getSortedPostsData } from "../lib/markdown";
+import { FaLinkedin, FaGithub, FaTwitter, FaWhatsapp } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
+import { format } from 'date-fns';
+
+const formatDate = (dateString: string) => {
+  try {
+    return format(new Date(dateString), 'dd-MM-yyyy');
+  } catch (error) {
+    return dateString;
+  }
+}
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const allPosts = getSortedPostsData();
+  const recentPosts = allPosts.slice(0, 3);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  return (
+    <div className="container">
+      <section id="home" className="hero-section">
+        <div className="hero-background"></div>
+        <h1 className="hero-title">Hi, I'm Durgesh Kushwaha</h1>
+        <p className="hero-subtitle">
+          I'm a <TypewriterEffect />
+        </p>
+      </section>
+
+      <section id="about" className="section">
+        <div className="about-container">
+          <div className="about-image-container">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/durgesh.webp"
+              alt="Durgesh Kushwaha"
+              width={350}
+              height={350}
+              className="about-image"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="about-content">
+            <h2>About Me</h2>
+            <p>
+              I am a passionate Full Stack Developer with a keen interest in leveraging AI and Data Science to build innovative solutions. With a solid foundation in modern web technologies, I enjoy creating seamless, user-friendly applications that solve real-world problems. I'm a lifelong learner, always exploring new tools and frameworks to enhance my skill set.
+            </p>
+            <a href="/Durgesh-Kushwaha-Resume.pdf" download className="resume-button">
+              Download Resume
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      <section id="skills" className="section">
+        <h2 className="section-title">My Skills</h2>
+        <div className="skills-container">
+          <div className="skill-badge">JavaScript</div>
+          <div className="skill-badge">TypeScript</div>
+          <div className="skill-badge">React</div>
+          <div className="skill-badge">Next.js</div>
+          <div className="skill-badge">Node.js</div>
+          <div className="skill-badge">Python</div>
+          <div className="skill-badge">SQL</div>
+          <div className="skill-badge">Docker</div>
+        </div>
+      </section>
+
+      <section id="projects" className="section">
+        <h2 className="section-title">Projects</h2>
+        <div className="cards-container">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
+      </section>
+
+      <section id="certificates" className="section">
+        <h2 className="section-title">Certificates</h2>
+        <div className="cards-container">
+          {certificates.map((certificate, index) => (
+            <div key={index} className="card">
+
+              {certificate.image && (
+                <Image
+                  src={certificate.image}
+                  alt={certificate.title}
+                  width={400}
+                  height={180}
+                  className="project-thumbnail"
+                />
+              )}
+              <h3>{certificate.title}</h3>
+              <div className="certificate-card-content">
+                <p>
+                  <strong>Issuer:</strong> {certificate.issuer}
+                </p>
+                <p>
+                  <strong>Date:</strong> {formatDate(certificate.date)}
+                </p>
+              </div>
+              <div className="project-button-wrapper">
+                <a
+                  href={certificate.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-button"
+                >
+                  View Certificate
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="recent-posts" className="section">
+        <h2 className="section-title">Recent Posts</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          {recentPosts.map(({ id, title, date, featuredImage, description }) => (
+            <Link key={id} href={`/blogs/${id}`} className="blog-post-card">
+              <div className="blog-post-card-content">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <span className="date">{date}</span>
+              </div>
+              {featuredImage && (
+                <Image
+                  src={featuredImage}
+                  alt={title}
+                  width={250}
+                  height={150}
+                  className="blog-post-card-image"
+                />
+              )}
+            </Link>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <Link href="/blogs" className="view-all-btn">
+            View All Posts
+          </Link>
+        </div>
+      </section>
+
+      <section id="contact" className="section">
+        <h2 className="section-title">Get In Touch</h2>
+        <div className="contact-container">
+          <div className="social-links">
+            <h3>Let's Connect</h3>
+            <p>
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+            </p>
+
+            <div className="social-icons-wrapper">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+                <FaLinkedin />
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
+                <FaGithub />
+              </a>
+              <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LeetCode">
+                <SiLeetcode />
+              </a>
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X.com">
+                <FaTwitter />
+              </a>
+
+              <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+                <FaWhatsapp />
+              </a>
+            </div>
+
+            <div className="contact-details">
+              <a href="mailto:durgeshcgc@gmail.com">durgeshcgc@gmail.com</a>
+              <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer">WhatsApp: +91 7706820906</a>
+            </div>
+          </div>
+          <form action="https://formspree.io/f/xblarykl" method="POST" className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name">Your Name</label>
+              <input id="name" type="text" name="name" className="form-input" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Your Email</label>
+              <input id="email" type="email" name="email" className="form-input" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone">Mobile Number (Optional)</label>
+              <input id="phone" type="tel" name="phone" className="form-input" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Your Message</label>
+              <textarea id="message" name="message" className="form-textarea" required></textarea>
+            </div>
+            <button type="submit" className="form-submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
     </div>
   );
 }

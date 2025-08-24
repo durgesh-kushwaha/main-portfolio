@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Personal Portfolio Website",
+    "description": "A modern, responsive portfolio website built with Next.js.",
+    "thumbnail": "/project-images/portfolio.webp",
+    "github": "https://github.com/",
+    "demo": "https://example.com/"
+  },
+  {
+    "title": "E-commerce Platform",
+    "description": "A full-stack e-commerce solution with user authentication.",
+    "thumbnail": "/project-images/ecommerce.jpg",
+    "github": "https://github.com/",
+    "demo": "https://example.com/"
+  },
+  {
+    "title": "E-commerce Platform",
+    "description": "A full-stack e-commerce solution with user authentication.",
+    "thumbnail": "/project-images/ecommerce.jpg",
+    "github": "https://github.com/",
+    "demo": "https://example.com/"
+  }
+]
