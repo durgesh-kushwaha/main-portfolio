@@ -164,7 +164,7 @@ export default function Home() {
                   <a href="https://wa.me/7706820906" target="_blank" rel="noopener noreferrer">WhatsApp: +91 7706820906</a>
                 </div>
             </div>
-            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" className="contact-form">
+            <form action="https://formspree.io/f/xblarykl" method="POST" className="contact-form">
                 <div className="form-group">
                     <label htmlFor="name">Your Name</label>
                     <input id="name" type="text" name="name" className="form-input" required />
