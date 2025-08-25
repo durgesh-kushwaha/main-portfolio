@@ -1,23 +1,23 @@
 [
   {
-    "title": "Microsoft Certied: Coming soon",
-    "issuer": "Microsoft",
-    "date": "2023-11-20",
-    "url": "https://www.microsoft.com/en-us/learning/certification-verification",
-    "image": "/images/azure-cert.jpg"
+    "title": "Artificial Intelligence for All",
+    "issuer": "Infosys Springboard",
+    "date": "2025-08-08",
+    "url": "https://verify.onwingspan.com/",
+    "image": "/certificate-images/infosys.jpg"
   },
   {
-    "title": "Google Cloud Professional Cloud Developer",
-    "issuer": "Google Cloud",
-    "date": "2023-09-10",
-    "url": "https://cloud.google.com/certification/verification",
-    "image": "/images/gcp-cert.jpg"
+    "title": "Data Science & Analytics",
+    "issuer": "HP",
+    "date": "2025-05-27",
+    "url": "https://www.life-global.org/certificate/57b03a0d-353e-48f9-a9d6-7e6bcf1523a0",
+    "image": "/certificate-images/hp.jpeg"
   },
   {
-    "title": "Certified Kubernetes Administrator (CKA)",
-    "issuer": "Cloud Native Computing Foundation",
-    "date": "2023-07-25",
-    "url": "https://www.cncf.io/certification/cka/",
-    "image": "/images/cka-cert.jpg"
+    "title": "Python For Beginners Course In-Depth",
+    "issuer": "Udemy",
+    "date": "2025-01-12",
+    "url": "https://www.udemy.com/certificate/UC-a56f421a-71a4-42c2-bfc3-9fc9806c2a8b/",
+    "image": "/certificate-images/python.jpeg"
   }
 ]

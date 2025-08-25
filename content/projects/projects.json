@@ -1,23 +1,23 @@
 [
   {
     "title": "Personal Portfolio Website",
-    "description": "A modern, responsive portfolio website built with Next.js.",
+    "description": "A modern, responsive portfolio website",
     "thumbnail": "/project-images/portfolio.webp",
-    "github": "https://github.com/",
-    "demo": "https://example.com/"
+    "github": "https://github.com/durgesh-kushwaha/main-portfolio",
+    "demo": "https://www.durgesh.me/"
   },
   {
-    "title": "E-commerce Platform",
-    "description": "A full-stack e-commerce solution with user authentication.",
-    "thumbnail": "/project-images/ecommerce.jpg",
-    "github": "https://github.com/",
-    "demo": "https://example.com/"
+    "title": "AI Mock Interviewer",
+    "description": "An AI-powered mock interview platform.",
+    "thumbnail": "/project-images/ai.png",
+    "github": "https://github.com/durgesh-kushwaha/ai-mock-interview",
+    "demo": "https://ai.durgesh.me/"
   },
   {
-    "title": "E-commerce Platform",
-    "description": "A full-stack e-commerce solution with user authentication.",
-    "thumbnail": "/project-images/ecommerce.jpg",
-    "github": "https://github.com/",
-    "demo": "https://example.com/"
+    "title": "Job Listing Template",
+    "description": "It is my first Job listing page.",
+    "thumbnail": "/project-images/listing.png",
+    "github": "https://github.com/durgesh-kushwaha/job-listings-project",
+    "demo": "https://durgeshlisting.netlify.app/"
   }
 ]
