@@ -35,7 +35,7 @@ export default function Home() {
          <div className="about-container">
           <div className="about-image-container">
             <Image
-              src="/profile-picture.jpg"
+              src="/durgesh.webp"
               alt="Durgesh Kushwaha"
               width={350}
               height={350}
