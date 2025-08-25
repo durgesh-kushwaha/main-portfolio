@@ -2,12 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import ProjectCard from "../components/ui/ProjectCard";
 import TypewriterEffect from "../components/ui/TypewriterEffect";
-import projects from "../content/projects/projects.json";
-import certificates from "../content/certificates/certificates.json";
 import { getSortedPostsData } from "../lib/markdown";
 import { FaLinkedin, FaGithub, FaTwitter, FaWhatsapp } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { format } from 'date-fns';
+import projectsData from '../content/projects/projects.json';
+import certificatesData from '../content/certificates/certificates.json';
 
 const formatDate = (dateString: string) => {
     try {
@@ -20,6 +20,8 @@ const formatDate = (dateString: string) => {
 export default function Home() {
   const allPosts = getSortedPostsData();
   const recentPosts = allPosts.slice(0, 3);
+  const projects = projectsData;
+  const certificates = certificatesData;
 
   return (
     <div className="container">

@@ -14,14 +14,14 @@ export function createSearchIndex(posts: BlogPost[], projects: Project[]) {
     ...posts.map((post) => ({
       type: 'blog' as const,
       title: post.title,
-      excerpt: post.excerpt,
+      excerpt: post.excerpt || '',
       url: `/blogs/${post.slug}`,
       tags: post.tags,
     })),
     ...projects.map((project) => ({
       type: 'project' as const,
       title: project.title,
-      excerpt: project.description,
+      excerpt: project.description || '',
       url: `/projects/${project.id}`,
       tags: project.technologies,
     })),
@@ -45,3 +45,5 @@ export function searchContent(query: string, posts: BlogPost[], projects: Projec
     .map((result) => result.item)
     .slice(0, 10)
 }
+
+

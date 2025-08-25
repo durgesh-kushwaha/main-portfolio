@@ -8,12 +8,13 @@ export async function generateStaticParams() {
   return paths.map(p => ({ slug: p.params.slug }));
 }
 
-export default async function Post({ params: { slug } }: { params: { slug: string } }) {
+export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const postData = await getPostData(slug);
   return (
     <div className="container section">
       <div className="blog-layout-container">
-        <main>
+        <main className="blog-post-main">
           <h1 className="blog-post-title">{postData.title}</h1>
           <p className="blog-post-date">{postData.date}</p>
           {postData.featuredImage && (
