@@ -58,3 +58,4 @@ export async function getPostData(slug: string) {
     ...(matterResult.data as { title: string; featuredImage?: string; description?: string }),
   };
 }
+

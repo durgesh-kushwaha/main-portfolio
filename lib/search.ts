@@ -45,3 +45,5 @@ export function searchContent(query: string, posts: BlogPost[], projects: Projec
     .map((result) => result.item)
     .slice(0, 10)
 }
+
+
