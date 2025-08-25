@@ -8,14 +8,9 @@ export async function generateStaticParams() {
   return paths.map(p => ({ slug: p.params.slug }));
 }
 
-interface PostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function Post({ params }: PostPageProps) {
-  const postData = await getPostData(params.slug);
+export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const postData = await getPostData(slug);
   return (
     <div className="container section">
       <div className="blog-layout-container">
