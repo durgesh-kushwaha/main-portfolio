@@ -12,22 +12,22 @@ export default function ContactPage() {
     },
     {
       name: 'LinkedIn',
-      value: 'linkedin.com/in/yourprofile',
-      href: 'https://linkedin.com/in/yourprofile',
+      value: 'linkedin.com/in/durgesh-kushwaha',
+      href: 'https://linkedin.com/in/durgesh-kushwaha',
       icon: '💼',
       description: 'Connect with me professionally and stay updated with my career journey.'
     },
     {
       name: 'GitHub',
-      value: 'github.com/yourusername',
-      href: 'https://github.com/yourusername',
+      value: 'github.com/durgesh-kushwaha',
+      href: 'https://github.com/durgesh-kushwaha',
       icon: '🐙',
       description: 'Check out my open-source projects and code contributions.'
     },
     {
       name: 'Twitter',
       value: '@yourusername',
-      href: 'https://twitter.com/yourusername',
+      href: 'https://twitter.com/im_durgesh_',
       icon: '🐦',
       description: 'Follow me for tech updates, thoughts, and industry insights.'
     }
