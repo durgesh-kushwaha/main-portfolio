@@ -47,7 +47,7 @@ export default function Home() {
             <p>
               I am a passionate Full Stack Developer with a keen interest in leveraging AI and Data Science to build innovative solutions. With a solid foundation in modern web technologies, I enjoy creating seamless, user-friendly applications that solve real-world problems. I&apos;m a lifelong learner, always exploring new tools and frameworks to enhance my skill set.
             </p>
-            <a href="/Durgesh-Kushwaha-Resume.pdf" download className="resume-button">
+            <a href="/DEMO_RESUME.pdf" download className="resume-button">
               Download Resume
             </a>
           </div>
