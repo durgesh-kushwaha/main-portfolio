@@ -4,11 +4,12 @@ import AuthorCardSidebar from "../../../components/ui/AuthorCardSidebar";
 import RecentPostsSidebar from "../../../components/ui/RecentPostsSidebar";
 
 export async function generateStaticParams() {
-  const paths = getAllPostIds();
+  const paths = await getAllPostIds();
   return paths.map(p => ({ slug: p.params.slug }));
 }
 
-export default async function Post({ params: { slug } }: { params: { slug: string } }) {
+export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const postData = await getPostData(slug);
   return (
     <div className="container section">

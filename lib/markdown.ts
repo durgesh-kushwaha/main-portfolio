@@ -5,6 +5,28 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { formatDate } from './utils';
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  date: string;
+  featuredImage?: string;
+  description?: string;
+  slug?: string;
+  contentHtml?: string;
+  tags?: string[];
+  excerpt?: string;
+}
+
+export interface Project {
+  id?: string;
+  title: string;
+  description: string;
+  thumbnail?: string;
+  github?: string;
+  demo?: string;
+  technologies?: string[];
+}
+
 const postsDirectory = path.join(process.cwd(), 'content/blogs');
 
 export function getSortedPostsData() {
@@ -31,7 +53,7 @@ export function getSortedPostsData() {
   });
 }
 
-export function getAllPostIds() {
+export async function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
